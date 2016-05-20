@@ -1,0 +1,9 @@
+#Block to stand on to Teleports
+#Use names with underscores not spaces
+Teleblock: ENDER_STONE
+
+#Word to start teleport
+Teleword: Poof
+
+#Word to cancel teleport
+Cancelword: cancel
