@@ -91,9 +91,24 @@ public class TeleblockListener implements Listener {
 		}, 80L);
 		main.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
 			public void run() {
-				Random location = new Random(101);
-				double x = location.nextInt() - 100;
-				double z = location.nextInt() - 100;
+				Random r = new Random();
+				double x, z;
+				double posX = r.nextInt(101);
+				double posZ = r.nextInt(101);
+				double negX = posX * -1;
+				double negZ = posZ * -1;
+				
+				if(r.nextInt(2) == 0) {
+					x = posX;
+				} else {
+					x = negX;
+				}
+				
+				if(r.nextInt(2) == 0) {
+					z = posZ;
+				} else {
+					z = negZ;
+				}
 				if(!(findBlock(p))) {
 					main.getScheduler().cancelAllTasks();
 				} else {
